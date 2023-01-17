@@ -5,7 +5,7 @@ Implementação de um CRUD completo com o objetivo de gerenciar uma lista de afa
 
 ## Gif demonstrativo
 <div align="center">
-<img src="https://github.com/pedroquintanilha/tstet/blob/main/recording-2023-01-16-18-29-35-_online-video-cutter.com_.gif" width="700px" />
+<img src="https://github.com/pedroquintanilha/springboot2-angular11/blob/main/recording-2023-01-16-18-29-35-_online-video-cutter.com_.gif" width="700px" />
 </div>
 
 ## Tecnologias utilizadas
