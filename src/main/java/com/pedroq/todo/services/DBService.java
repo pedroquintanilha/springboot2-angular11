@@ -1,7 +1,7 @@
 package com.pedroq.todo.services;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +16,16 @@ public class DBService {
 	@Autowired
 	private TodoRepository todoRepository;
 
-	public void instanciaBaseDeDados() {
+	public void instanciaBaseDeDados() throws ParseException  {
 		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
-		Todo t1 = new Todo(null, "Estudar", "Estudar Spring Boot 2 e Angular 11", LocalDateTime.parse("25/03/2022 10:40", formatter), false);
-		Todo t2 = new Todo(null, "Ler e meditar", "Ler Livros de desenvolvimento pessoal", LocalDateTime.parse("22/03/2021 13:00", formatter), true);
-		Todo t3 = new Todo(null, "Exercícios", "Praticar exercícios físicos", LocalDateTime.parse("21/03/2022 10:15", formatter), false);
-		Todo t4 = new Todo(null, "Meditar", "Meditar durante 30 minutos pela manhã", LocalDateTime.parse("27/03/2021 05:40", formatter), true);
+		Todo t1 = new Todo(null, "Estudar", "Estudar Spring Boot 2 e Angular 11", sdf.parse("25/01/2023"), false);
+		Todo t2 = new Todo(null, "Fazer exercícios", "Me matricular na aula de patinação", sdf.parse("19/02/2023"), false);
+		//Todo t3 = new Todo(null, "Exercícios", "Ir hoje na aula de natação", sdf.parse("21/03/2023"), false);
+		//Todo t4 = new Todo(null, "Meditar", "Meditar durante 30 minutos pela manhã", sdf.parse("27/03/2021"), true);
 		
-		todoRepository.saveAll(Arrays.asList(t1, t2, t3, t4));
+		todoRepository.saveAll(Arrays.asList(t1, t2));
+		
 	}
 }
